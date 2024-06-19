@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../include/style.css" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="component.html" />
+    <script src="mqtt.js"></script>
+
+    <title>LOAD CELL MONITORING</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center">Update Tinggi Badan</h1>
+      <div class="gauge-container">
+        <div class="progress">
+          <div
+            id="progressBar"
+            class="progress-bar"
+            role="progressbar"
+            style="width: 0%"
+            aria-valuenow="0"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
+        </div>
+      </div>
+      <div class="gauge-value" id="gaugeValue">0 cm</div>
+
+      <!-- ________________________________________________ -->
+      <h1 class="text-center">Update Berat Badan</h1>
+      <div class="gauge-container">
+        <div class="progress">
+          <div
+            id="progressBar1"
+            class="progress-bar"
+            role="progressbar"
+            style="width: 0%"
+            aria-valuenow="0"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
+        </div>
+      </div>
+      <div class="gauge-value" id="gaugeValue1">0 kg</div>
+    </div>
+    <!-- <h1>LOAD CELL</h1>
+    <p>ULTRASONIC : <b id="distance" style="color: blue"> </b> cm</p> -->
+  </body>
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+  <script type="text/javascript" src="mqtt.js"></script>
+</html>

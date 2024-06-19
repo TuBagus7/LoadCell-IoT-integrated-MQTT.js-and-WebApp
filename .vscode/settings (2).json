@@ -1,0 +1,11 @@
+{
+  "vsmqtt.brokerProfiles": [
+    {
+      "name": "emqx",
+      "host": "broker.emqx.io",
+      "port": 1883,
+      "clientId": "vsmqtt_client_a9bf"
+    }
+  ],
+  "cmake.sourceDirectory": "G:/My Drive/Project IoT/Timbangan Bayi/timbangan_bayi/load_cell/lib/MQTT-2.5.2"
+}

@@ -1,0 +1,51 @@
+body {
+  background: url("https://www.beingtheparent.com/wp-content/uploads/2022/10/doctor-checking-weight-of-baby.jpg")
+    no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Menambahkan transparansi pada latar belakang */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.gauge-container {
+  width: 200px;
+  margin: 20px auto;
+}
+
+.progress {
+  height: 20px;
+}
+
+/* Colors for the gauge levels */
+.progress-bar-success {
+  background-color: #0f0;
+}
+
+.progress-bar-warning {
+  background-color: #ff0;
+}
+
+.progress-bar-danger {
+  background-color: #f00;
+}
+
+/* Custom CSS for the gauge value */
+.gauge-value {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 10px;
+}

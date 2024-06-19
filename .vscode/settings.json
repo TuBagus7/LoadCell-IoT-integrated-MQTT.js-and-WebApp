@@ -1,0 +1,11 @@
+{
+  "vsmqtt.brokerProfiles": [
+    {
+      "name": "test",
+      "host": "wss://tubagus.cloud.shiftr.io",
+      "port": 443,
+      "clientId": "vsmqtt_client_0a25"
+    }
+  ],
+  "cmake.sourceDirectory": "C:/laragon/www/timbangan/lib/MQTT-2.5.2"
+}
