@@ -23,6 +23,7 @@ WiFiClient wifi;
 MQTTClient client;
 NusabotSimpleTimer timer;
 
+//Configuration WiFI
 char ssid[] = "XS";
 char pass[] = "Kemod202";
 
@@ -34,7 +35,7 @@ float fix;
 int sp = 30;
 float kg;
 float weight; 
-float calibration_factor = 415000; // for me this vlaue works just perfect 211000  
+float calibration_factor = 415000; // Calibration for loadcell adjustable  
 float BMI;
 
 //void sendSensor()
