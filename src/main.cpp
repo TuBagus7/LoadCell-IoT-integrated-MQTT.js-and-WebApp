@@ -1,3 +1,4 @@
+//import library
 #include <Arduino.h>
 #include <WiFi.h>
 #include <MQTT.h>
@@ -23,8 +24,9 @@ WiFiClient wifi;
 MQTTClient client;
 NusabotSimpleTimer timer;
 
-char ssid[] = "Redmi Note 10 Pro";
-char pass[] = "1sampai8";
+//Configuration WiFI
+char ssid[] = "XS";
+char pass[] = "Kemod202";
 
 long duration, distance;
 long duration2, distance2;
@@ -34,7 +36,7 @@ float fix;
 int sp = 30;
 float kg;
 float weight; 
-float calibration_factor = 211000; // for me this vlaue works just perfect 211000  
+float calibration_factor = 415000; // Calibration for loadcell adjustable  
 float BMI;
 
 //void sendSensor()
@@ -70,55 +72,38 @@ void subscribe(String &topic, String &data){
 }
 
 
-void measureweight(){
- scale.set_scale(calibration_factor); //Adjust to this calibration factor
-  // Serial.print("Reading: ");
-  weight = scale.get_units(5); 
-    if(weight<0)
-  {
-    weight=0.00;
-    }
-  //Serial.print(scale.get_units(), 2);
- // Serial.print(" lbs"); //Change this to kg and re-adjust the calibration factor if you follow SI units like a sane person
-  // Serial.print("Kilogram:");
-  // Serial.print( weight); 
-  // Serial.print(" Kg");
-  // Serial.print(" calibration_factor: ");
-  // Serial.print(calibration_factor);
-  // Serial.println();
-  // Delay before repeating measurement
-  delay(100);
-}
-void usonic(){
-  digitalWrite(trigPin, LOW);  // Added this line
-  delayMicroseconds(2); // Added this line
+
+void usonic() {
+  // untuk ultrasonic 1
+  digitalWrite(trigPin, LOW);  
+  delayMicroseconds(2);
   digitalWrite(trigPin, HIGH);
-  delayMicroseconds(10); // Added this line
+  delayMicroseconds(10);
   digitalWrite(trigPin, LOW);
   duration = pulseIn(echoPin, HIGH);
-  distance = (duration/2) / 29.1;
+  distance = (duration / 2) / 29.1;
 
-
-  // Serial.print(distance);
-  // Serial.println(" cm");
-  
-
-  digitalWrite(trigPin2, LOW);  // Added this line
-  delayMicroseconds(2); // Added this line
+  // untuk ultrasonic 2
+  digitalWrite(trigPin2, LOW);  
+  delayMicroseconds(2);
   digitalWrite(trigPin2, HIGH);
-  delayMicroseconds(10); // Added this line
+  delayMicroseconds(10);
   digitalWrite(trigPin2, LOW);
   duration2 = pulseIn(echoPin2, HIGH);
-  distance2 = (duration2/2) / 29.1;
-
-  // Serial.print(distance2);
-  // Serial.println(" cm");
-
-
+  distance2 = (duration2 / 2) / 29.1;
 } 
+void measureWeight() {
+  scale.set_scale(calibration_factor);
+  weight = scale.get_units(5); 
+  if (weight < 0) {
+    weight = 0.00;
+  }
+  delay(100);
+}
+ 
 void result(){
   usonic();
-  measureweight();
+  measureWeight();
   tinggi = 55 - distance - distance2;
 
   // Pastikan tinggi dalam meter untuk perhitungan BMI
