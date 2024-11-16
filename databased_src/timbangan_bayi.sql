@@ -33,7 +33,7 @@ CREATE TABLE `data` (
   `bb` varchar(10) NOT NULL,
   `value` varchar(50) NOT NULL,
   `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -47,7 +47,7 @@ CREATE TABLE `user` (
   `fullname` varchar(100) NOT NULL,
   `role` enum('Admin','User') NOT NULL DEFAULT 'User',
   `active` enum('Yes','No') NOT NULL DEFAULT 'Yes'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
