@@ -119,7 +119,7 @@ void usonic(){
 void result(){
   usonic();
   measureweight();
-  tinggi = 55 - distance - distance2;
+  tinggi = 51 - distance - distance2;
 
   // Pastikan tinggi dalam meter untuk perhitungan BMI
   float tinggi_m = tinggi / 100.0;
