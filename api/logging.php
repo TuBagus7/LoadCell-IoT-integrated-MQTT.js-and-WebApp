@@ -23,13 +23,4 @@ $sql = "INSERT INTO data (serial_number, sensor_actuator, value, name, mqtt_topi
 mysqli_query($conn, $sql);
 
 
-
-$sql = "SELECT * FROM data";
-$result= mysqli_query($conn, $sql);
-
-while($row = mysqli_fetch_assoc($result)){
-    echo $row ['sensor_actuator'];
-}
-
-
 ?>
