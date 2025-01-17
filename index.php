@@ -1,21 +1,22 @@
 <?php
   session_start();
 
-  if(!isset($_SESSION['username'])){
+  if(!isset($_SESSION['username'])){  // mengecek apakah pengguna sudah login
     echo "<script> location.href='login.php' </script>";
   }
 
-  include "config/database.php";
+  // mengkoneksikan ke halaman
+  include "config/database.php"; 
   include "inc/header.php";
   include "inc/navbar.php";
   include "inc/sidebar.php";
   include "inc/alerts.php";
 
-  if(isset($_GET['page'])){
-    $page = $_GET['page'];
+  if(isset($_GET['page'])){ //mengecek apakah ada parameter page yang dikirim melalui url
+    $page = $_GET['page']; //mengyimpan parameter page
     include "page/". $page .".php";
   } else {
-    include "page/dashboard.php";
+    include "page/dashboard.php"; //jika parameter tidak ada maka file dashboard akan dimuat default
   }
 
   include "inc/footer.php";

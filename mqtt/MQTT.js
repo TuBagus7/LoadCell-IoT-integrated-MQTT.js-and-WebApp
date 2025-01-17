@@ -43,7 +43,15 @@ client.on("message", function (topic, payload) {
     if (resultElement) {
       resultElement.innerHTML = payloadString;
     }
+  } else if (topic === "loadcell/bmi") { // Menangani topik BMI
+    const bmiElement = document.getElementById("bmi");
+    if (bmiElement) {
+      bmiElement.innerHTML = payloadString;
+      console.log("data bmi masuk")
+    }
   }
+
+  
 
   if (topic.includes("monitoring/status/")) {
     const monitoringElement = document.getElementById(topic);
@@ -59,11 +67,3 @@ client.on("message", function (topic, payload) {
   }
 });
 
-function publishLampu() {
-  let data = "mati";
-  if (document.getElementById("lampu1-nyala").checked) {
-    data = "nyala";
-  }
-
-  client.publish("monitoring/12345678/led", data, { qos: 1, retain: true });
-}

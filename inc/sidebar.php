@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="/" class="brand-link">
-        <span class="brand-text font-weight-light">Sistem IoT</span>
+        <span class="brand-text font-weight-light">Timbangan Pintar</span>
     </a>
 
     <!-- Sidebar -->
@@ -35,11 +35,17 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="?page=datasensor" class="nav-link">
+                    <a href="?page=revdatasensor" class="nav-link">
                         <i class="nav-icon fas fa-database"></i>
                         <p>Data Sensor</p>
                     </a>
                 </li>
+                <!-- <li class="nav-item">
+                    <a href="?page=filter" class="nav-link">
+                        <i class="nav-icon fas fa-database"></i>
+                        <p>Filter Data</p>
+                    </a>
+                </li> -->
                 <?php if($_SESSION['role'] == "Admin"){ ?>
                 <li class="nav-item">
                     <a href="?page=user" class="nav-link">
@@ -47,6 +53,12 @@
                         <p>Pengguna</p>
                     </a>
                 </li>
+                <!-- <li class="nav-item">
+                    <a href="?page=grafik" class="nav-link">
+                        <i class="nav-icon fas fa-chart-bar"></i>
+                        <p>Grafik</p>
+                    </a>
+                </li> -->
                 <?php } ?>
                 <li class="nav-item">
                     <a href="logout.php" class="nav-link">

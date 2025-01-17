@@ -5,7 +5,13 @@
       "host": "wss://tubagus.cloud.shiftr.io",
       "port": 443,
       "clientId": "vsmqtt_client_0a25"
+    },
+    {
+      "name": "cek",
+      "host": "broker.emqx.io",
+      "port": 1883,
+      "clientId": "vsmqtt_client_3b79"
     }
   ],
-  "cmake.sourceDirectory": "C:/laragon/www/timbangan/lib/MQTT-2.5.2"
+  "cmake.sourceDirectory": "C:/laragon/www/fudin/lib/MQTT-2.5.2"
 }
